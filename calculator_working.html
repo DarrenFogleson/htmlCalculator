@@ -11,22 +11,35 @@
 			.gridOperator{
 				display: grid;
 				grid-template-columns: auto;
-				width: 125px;
-				border-style: solid;
-				border-width: 2px;
+				width: 100px;
 				position: absolute;
-				top: 300px;
-				left: 450px;
-				
+				top: 240px;
+				left: 400px;	
 			}
 			.gridItem{
-				width: 125px;
+				width: 100px;
 				text-align: center;
-				margin: 10px;
-				padding: 10px;
+				margin: 5px;
+				padding: 5px;
+				border-style: solid;
+				border-width: 5px;
+			}
+			body{background-color: #C0C0C0;
 			}
 		</style>
-		
+		<style type="text/css">
+			#footer {
+				clear: left;
+				background: #C0C0C0;
+				padding: 3px;
+				font-size: 20px;
+				margin: 0 0 0 12px;
+			}
+			#footer p {
+				font-size: .75em;
+				margin: 0 0 0 12px;
+			}
+		</style>
 		<script type="text/javaScript">
 			function addNumb(x){
 				var signValue = document.getElementById("sign").innerHTML
@@ -53,6 +66,7 @@
 				var result = 0;
 				var a = Number(document.getElementById("first").innerHTML);
 				var b = Number(document.getElementById("second").innerHTML);
+				var z = document.getElementById("sign").innerHTML;
 				
 				if(z == '+'){
 					result = a + b;
@@ -73,11 +87,9 @@
 	</head>
 	<body>
 
-		<h1>Grid Elements</h1>
+		<h1>Basic Calculator</h1>
 
-		<p>A Grid Layout must have a parent element with the <em>display</em> property set to <em>grid</em> or <em>inline-grid</em>.</p>
-
-		<p>Direct child element(s) of the grid container automatically becomes grid items.</p>
+		<p>This is a basic single digit calculator.</p>
 		<div id="first" class="number">0</div>
 		<br>
 		<div id="sign" class="sig">?</div>
@@ -101,15 +113,20 @@
 			<div class="gridItem" onclick="addNumb(8)">8</div>
 			<div class="gridItem" onclick="addNumb(9)">9</div>
 			<div class="gridItem">&nbsp;</div>
-			<div class="gridItem" onclick="addNumb(0, 'hello')">0</div>
+			<div class="gridItem" onclick="addNumb(0)">0</div>
 			<div class="gridItem" onclick="clearEntry()">c</div>
 		</div>
 		<div class="gridOperator">
 			<div class="gridItem" onclick="operator('+')">+</div>
 			<div class="gridItem" onclick="operator('-')">-</div>
-			<div class="gridItem" onclick="operator('-')">*</div>
-			<div class="gridItem" onclick="operator('-')">/</div>
+			<div class="gridItem" onclick="operator('*')">*</div>
+			<div class="gridItem" onclick="operator('/')">/</div>
 			<div class="gridItem" onclick="calc()">=</div>
+			<div id="footer">
+		</div>
+		<div id="footer">
+			<p>Content is &copy; Darren Fogleson.</p>
+			<p>This page is valid HTML5.</p>
 		</div>
 	</body>
 </html> 
